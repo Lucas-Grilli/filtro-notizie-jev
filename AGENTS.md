@@ -47,7 +47,7 @@ Content-Type: application/json
 
 ## Hard rules
 
-- The API key comes only from the environment or a git-ignored `.env` (`TYPESAFE_API_KEY`). Never hardcode it, never log it, never commit `.env`.
+- Each user brings their own Jev key (create it at https://console.typesafe.ai/). The API key comes only from the environment or a git-ignored `.env` (`TYPESAFE_API_KEY`). Never hardcode it, never log it, never commit `.env`.
 - Keep the regex before Jev. Never send every raw title to Jev.
 - Treat Jev answers as probabilities that rank and filter. Do not present them as fact verification: Jev reads only the headline text.
 - Thresholds (0.6 default) are starting points; tune them on real runs (`--mostra 30`), not by guessing.

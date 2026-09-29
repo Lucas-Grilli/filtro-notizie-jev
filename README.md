@@ -5,6 +5,11 @@
 <p align="center">Non un'altra regex più lunga: è la regex che avete già, più un giudice che capisce il significato del titolo.</p>
 
 <p align="center">
+  <img alt="Licenza" src="https://img.shields.io/badge/licenza-MIT-blue.svg">
+  <img alt="Stato" src="https://img.shields.io/badge/stato-in%20produzione%20su%20Poltronave-brightgreen.svg">
+</p>
+
+<p align="center">
   <a href="#il-problema">Il problema</a> ·
   <a href="#regex-contro-jev-la-differenza">Regex contro Jev</a> ·
   <a href="#come-funziona">Come funziona</a> ·
@@ -16,7 +21,7 @@
   <a href="#usarlo-con-unai">Usarlo con un'AI</a>
 </p>
 
-> Repo privata, condivisa per uso interno. È il motore che sceglie le notizie per [Poltronave](https://poltronave.it) (post quotidiano su X e articolo settimanale del blog), estratto e reso configurabile per qualsiasi tema.
+> È il motore che sceglie le notizie per [Poltronave](https://poltronave.it) (post quotidiano su X e articolo settimanale del blog), estratto e reso configurabile per qualsiasi tema.
 
 ---
 
@@ -144,7 +149,7 @@ cd filtro-notizie-jev
 python filtro_notizie.py --config esempi/conti_pubblici.json --senza-jev
 ```
 
-**Con Jev**: copiate `.env.example` in `.env` e metteteci la chiave (`TYPESAFE_API_KEY=...`). La chiave si ottiene da TypeSafe; se non l'avete, chiedetela a Lucas. Poi:
+**Con Jev**: copiate `.env.example` in `.env` e metteteci la chiave (`TYPESAFE_API_KEY=...`). Ognuno usa la propria chiave Jev: si crea un account su [console.typesafe.ai](https://console.typesafe.ai/) e si genera lì. Poi:
 
 ```bash
 python filtro_notizie.py --config esempi/conti_pubblici.json
@@ -273,7 +278,7 @@ Il codice non contiene niente di specifico: tutto il tema vive in un file JSON. 
 - **Controlla il tema, non i verbi.** Esempio reale di Poltronave: un post ha scritto "Moody's promuove l'Italia" quando Moody's aveva solo confermato il rating. La notizia era giustamente in tema e concreta; l'errore stava nel verbo, e i fatti si verificano aprendo le fonti, non con Jev.
 - **Il raggruppamento è a parole in comune**, non a significato: due titoli sullo stesso fatto scritti in modo molto diverso restano storie separate. Di solito non è grave (le giudica entrambe), ma costa una chiamata in più.
 - **Google News RSS** non è un'API ufficiale: può cambiare formato o rallentare. I feed diretti delle testate sono più stabili.
-- **Costo di Jev**: TypeSafe non pubblica un listino nella documentazione dell'API; ogni risposta riporta i token usati (`usage`). Su Poltronave il giro quotidiano fa al massimo 12 chiamate da poche centinaia di token l'una. Chiedete a Lucas il costo reale del suo piano prima di alzare `--max-jev`.
+- **Costo di Jev**: TypeSafe non pubblica un listino nella documentazione dell'API; ogni risposta riporta i token usati (`usage`). Su Poltronave il giro quotidiano fa al massimo 12 chiamate da poche centinaia di token l'una. Controllate il consumo nella vostra console TypeSafe prima di alzare `--max-jev`.
 
 ## Usarlo con un'AI
 
@@ -295,4 +300,8 @@ AGENTS.md                istruzioni per assistenti AI
 
 ## Contatto
 
-Domande, errori, un tema che non torna: scrivete a Lucas.
+Domande, errori, un tema che non torna: aprite una [issue](https://github.com/Lucas-Grilli/filtro-notizie-jev/issues).
+
+## Licenza
+
+MIT, v. [LICENSE](LICENSE).
