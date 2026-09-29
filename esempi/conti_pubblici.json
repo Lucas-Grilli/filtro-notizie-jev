@@ -1,0 +1,52 @@
+{
+ "nome": "Conti pubblici italiani (la configurazione che usa Poltronave)",
+ "google_news": {
+  "lingua": "it",
+  "paese": "IT",
+  "ricerche": [
+   "debito pubblico",
+   "manovra OR \"legge di bilancio\"",
+   "Giorgetti OR \"Banca d'Italia\" OR spread OR rating",
+   "deficit OR \"interessi sul debito\" OR Btp",
+   "Upb OR \"Corte dei conti\" OR Istat conti pubblici"
+  ]
+ },
+ "feed_diretti": [
+  "https://www.ansa.it/sito/notizie/economia/economia_rss.xml",
+  "https://www.ansa.it/sito/notizie/politica/politica_rss.xml",
+  "https://www.agi.it/economia/rss",
+  "https://www.ilsole24ore.com/rss/economia.xml",
+  "https://www.ilsole24ore.com/rss/italia.xml",
+  "https://www.corriere.it/rss/economia.xml",
+  "https://www.ilfattoquotidiano.it/feed/",
+  "https://www.money.it/spip.php?page=backend"
+ ],
+ "testate": {
+  "ansa.it": "ANSA",
+  "agi.it": "AGI",
+  "ilsole24ore.com": "Il Sole 24 Ore",
+  "corriere.it": "Corriere della Sera",
+  "ilfattoquotidiano.it": "Il Fatto Quotidiano",
+  "money.it": "Money.it"
+ },
+ "prefiltro_regex": "debit|deficit|manovra|bilancio|spread|rating|interess|btp|bot |pil|tass|accis|irpef|iva|pension|spesa|giorgetti|upb|corte dei conti|istat|bankitalia|banca d.italia|pnrr|fisco|condono|rottamazion|bonus|cuneo|copertur|mef|tesoro|eurostat|patto di stabilit",
+ "parole_vuote": ["debito", "pubblico", "italia", "italiano", "governo", "manovra", "bilancio", "della", "delle", "degli",
+                  "sono", "come", "dopo", "anche", "nella", "nel", "alla", "allo", "sulla", "sulle", "prima", "oggi", "2026"],
+ "domande": {
+  "conti_pubblici": {
+   "ruolo": "obbligatoria",
+   "soglia": 0.6,
+   "domanda": "Does this news item concern Italian national public finances: public debt, deficit, the budget law, a tax or public spending measure, interest on the debt, the BTP-Bund spread or Italy's sovereign rating? Reject company news, markets unrelated to government bonds, local administrations and other countries."
+  },
+  "fatto_concreto": {
+   "ruolo": "obbligatoria",
+   "soglia": 0.6,
+   "domanda": "Is this a concrete, verifiable event: an official figure released, a measure approved or formally presented, a rating decision, an official report? Reject opinions, interviews, rumors, polls and political statements without a decision."
+  },
+  "cifra_verificabile": {
+   "ruolo": "bonus",
+   "domanda": "Does the item report a euro amount or a figure (cost, coverage, debt, deficit, rate) that could be checked against a primary source such as Banca d'Italia, ISTAT, MEF, the Parliamentary Budget Office, Corte dei conti or Eurostat?"
+  }
+ },
+ "min_testate": 2
+}

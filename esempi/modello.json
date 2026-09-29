@@ -1,0 +1,36 @@
+{
+ "nome": "IL TUO TEMA - copia questo file, rinominalo e compila i campi",
+ "google_news": {
+  "lingua": "it",
+  "paese": "IT",
+  "ricerche": [
+   "parola chiave uno",
+   "\"frase esatta\" OR sinonimo"
+  ]
+ },
+ "feed_diretti": [
+  "https://www.ansa.it/sito/notizie/economia/economia_rss.xml"
+ ],
+ "testate": {
+  "ansa.it": "ANSA"
+ },
+ "prefiltro_regex": "radice1|radice2|nome proprio|sigla",
+ "parole_vuote": ["della", "delle", "degli", "sono", "come", "dopo", "anche", "nella", "alla", "sulla", "oggi"],
+ "domande": {
+  "in_tema": {
+   "ruolo": "obbligatoria",
+   "soglia": 0.6,
+   "domanda": "Does this news item concern <IL TUO TEMA, scritto preciso>? Reject <cosa assomiglia al tema ma non lo e'>."
+  },
+  "fatto_concreto": {
+   "ruolo": "obbligatoria",
+   "soglia": 0.6,
+   "domanda": "Is this a concrete, verifiable event (an official decision, a released figure, a launch, a report)? Reject opinions, interviews, rumors and statements without a decision."
+  },
+  "utile_per_noi": {
+   "ruolo": "bonus",
+   "domanda": "<la domanda che distingue una notizia che ti serve davvero da una che e' solo in tema>"
+  }
+ },
+ "min_testate": 2
+}
