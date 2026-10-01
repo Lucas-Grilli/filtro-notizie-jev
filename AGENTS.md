@@ -2,6 +2,11 @@
 
 You are integrating a news filter into an existing codebase. The humans you work for are experienced programmers who rarely use AI tools: explain each change in plain words in your summary, keep diffs small and reviewable, and never replace their existing regex filter — add to it.
 
+## Read also
+
+- `GUIDA-JEV.md`: API input/output, measured token costs, how to write questions, recurring code patterns (pre-filter, multiplied score, per-question thresholds, bands, reuse of past scores, spending cap, targeted rescoring).
+- `casi/`: three production uses (news headlines, job ads, social posts) with their exact questions, thresholds and call code. Pick the closest one as the template for the user's case.
+
 ## What this repo is
 
 `filtro_notizie.py` (single file, Python 3.8+, standard library only) turns RSS feeds into a short ranked list of relevant news stories:

@@ -280,6 +280,11 @@ Il codice non contiene niente di specifico: tutto il tema vive in un file JSON. 
 - **Google News RSS** non è un'API ufficiale: può cambiare formato o rallentare. I feed diretti delle testate sono più stabili.
 - **Costo di Jev**: TypeSafe non pubblica un listino nella documentazione dell'API; ogni risposta riporta i token usati (`usage`). Su Poltronave il giro quotidiano fa al massimo 12 chiamate da poche centinaia di token l'una. Controllate il consumo nella vostra console TypeSafe prima di alzare `--max-jev`.
 
+## Più esempi: come usiamo Jev
+
+- [GUIDA-JEV.md](GUIDA-JEV.md): cosa entra e cosa esce, quanto costa (token misurati), come scrivere le domande, schemi di codice che si ripetono, cosa Jev non fa.
+- [casi/](casi/README.md): tre usi in produzione, con domande, soglie e codice della chiamata: [notizie](casi/01_notizie.md), [annunci di lavoro](casi/02_annunci_lavoro.md), [post social](casi/03_post_social.md).
+
 ## Usarlo con un'AI
 
 Se usate un assistente di programmazione (Claude Code, Cursor, Copilot, ChatGPT), c'è [AGENTS.md](AGENTS.md): istruzioni scritte per un'AI, con il contratto delle funzioni, i vincoli da non rompere e i passi per integrare il motore nel vostro codice. Basta dirgli:
@@ -296,6 +301,8 @@ esempi/conti_pubblici.json  configurazione reale di Poltronave
 esempi/modello.json      da copiare per il vostro tema
 .env.example             dove va la chiave (copiare in .env)
 AGENTS.md                istruzioni per assistenti AI
+GUIDA-JEV.md             guida pratica a Jev: input, output, costi, domande, schemi
+casi/                    tre usi reali: notizie, annunci di lavoro, post social
 ```
 
 ## Contatto
